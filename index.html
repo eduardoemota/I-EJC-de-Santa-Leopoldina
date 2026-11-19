@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10285a">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Uma lembrança para você 🌹</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ TELA 1 — APRESENTAÇÃO ============ -->
+  <main id="tela1" class="tela">
+    <span class="petala" style="--x:12%;--t:19s;--d:-2s;--s:13px"></span>
+    <span class="petala" style="--x:30%;--t:24s;--d:-11s;--s:10px"></span>
+    <span class="petala" style="--x:48%;--t:21s;--d:-6s;--s:14px"></span>
+    <span class="petala" style="--x:66%;--t:26s;--d:-15s;--s:11px"></span>
+    <span class="petala" style="--x:82%;--t:20s;--d:-9s;--s:13px"></span>
+    <span class="petala" style="--x:92%;--t:25s;--d:-18s;--s:9px"></span>
+
+    <div class="rosa-wrap surge" style="--d:.1s">
+      <img class="rosa" src="assets/rosa.png" alt="Uma rosa" width="512" height="512" decoding="async">
+    </div>
+
+    <h1 class="titulo surge" style="--d:.7s">O importante é a rosa 🌹❤️</h1>
+
+    <p class="apresentacao surge" style="--d:1.2s">Fico muito feliz em poder te entregar este terço! Que você sempre se lembre do amor de Cristo por você!</p>
+
+    <button id="btnRevelar" class="btn-revelar surge" style="--d:1.8s" type="button">Revelar minha mensagem</button>
+    <p id="erro" class="erro" hidden>Não encontramos esta mensagem. Escaneie novamente o QR Code do seu terço.</p>
+  </main>
+
+  <!-- ============ TELA 2 — MENSAGEM ============ -->
+  <section id="tela2" class="tela oculta" hidden>
+    <div id="marca" class="marca-dagua" aria-hidden="true"></div>
+
+    <article class="carta" id="carta">
+      <header class="carta-topo">
+        <div id="arte" class="aparecida"></div>
+      </header>
+
+      <p id="saudacao" class="saudacao"></p>
+      <div id="texto" class="texto"></div>
+
+      <blockquote class="versiculo">
+        <p id="versiculo"></p>
+        <cite id="referencia"></cite>
+      </blockquote>
+
+      <div id="terco" class="terco" aria-hidden="true"></div>
+
+      <section class="oracao">
+        <h2>Salve-Rainha</h2>
+        <p>Salve, Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve! A vós bradamos, os degredados filhos de Eva; a vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei; e depois deste desterro, mostrai-nos Jesus, bendito fruto do vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria.</p>
+        <p>Rogai por nós, Santa Mãe de Deus, para que sejamos dignos das promessas de Cristo. Amém.</p>
+      </section>
+
+      <p class="assinatura">Com carinho, Eduardo.</p>
+    </article>
+
+    <div class="acoes no-print">
+      <button id="btnImprimir" class="btn-sec" type="button">Imprimir ou salvar em PDF</button>
+      <button id="btnVoltar" class="btn-sec btn-claro" type="button">Voltar ao início</button>
+      <p class="dica">Para salvar em PDF, escolha “Salvar como PDF” na janela de impressão (no iPhone: compartilhar → Imprimir → toque e abra a pré-visualização).</p>
+    </div>
+  </section>
+
+  <script src="art.js"></script>
+  <script src="messages.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

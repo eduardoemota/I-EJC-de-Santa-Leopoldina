@@ -1,0 +1,265 @@
+/* ===== Variáveis ===== */
+:root {
+  --navy: #10285a;
+  --azul: #1d4690;
+  --ceu: #e6effb;
+  --marfim: #fffdf6;
+  --ouro: #c9a24a;
+  --ouro-claro: #ecd48f;
+  --rosa: #e8586f;
+  --vermelho: #c8102e;
+  --texto: #1d2b4a;
+  --serif: "Cormorant Garamond", "Palatino Linotype", Palatino, Georgia, serif;
+  --corpo: "Lora", Georgia, "Times New Roman", serif;
+  --script: "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ceu);
+  color: var(--texto);
+  font-family: var(--corpo);
+  -webkit-font-smoothing: antialiased;
+}
+[hidden] { display: none !important; }
+
+.tela { min-height: 100vh; min-height: 100dvh; transition: opacity .9s ease; }
+.tela.oculta { opacity: 0; }
+
+/* ===== Tela 1 ===== */
+#tela1 {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 28px 24px calc(28px + env(safe-area-inset-bottom));
+  color: var(--marfim);
+  background: radial-gradient(ellipse at 50% 28%, #2f63b7 0%, #1a4087 42%, #0c2250 100%);
+  overflow: hidden;
+}
+#tela1::before { /* estrelas douradas bem sutis */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(1.6px 1.6px at 10% 14%, rgba(236,212,143,.9), transparent 60%),
+    radial-gradient(1.2px 1.2px at 24% 40%, rgba(255,255,255,.8), transparent 60%),
+    radial-gradient(1.6px 1.6px at 86% 18%, rgba(236,212,143,.9), transparent 60%),
+    radial-gradient(1.2px 1.2px at 74% 36%, rgba(255,255,255,.8), transparent 60%),
+    radial-gradient(1.4px 1.4px at 8% 72%, rgba(255,255,255,.7), transparent 60%),
+    radial-gradient(1.6px 1.6px at 92% 78%, rgba(236,212,143,.85), transparent 60%),
+    radial-gradient(1.2px 1.2px at 40% 90%, rgba(236,212,143,.8), transparent 60%),
+    radial-gradient(1.2px 1.2px at 62% 8%, rgba(255,255,255,.7), transparent 60%);
+  animation: brilho 7s ease-in-out infinite alternate;
+}
+#tela1 > * { position: relative; z-index: 1; }
+
+.rosa-wrap {
+  position: relative;
+  width: min(62vw, 38dvh, 290px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 38%, #ffffff 0%, #fff9ea 62%, #f4e6bd 100%);
+  box-shadow: 0 0 0 2px var(--ouro), 0 0 0 9px rgba(236,212,143,.22), 0 0 70px rgba(236,212,143,.4);
+  display: grid; place-items: center;
+}
+.rosa {
+  width: 86%; height: 86%; object-fit: contain; border-radius: 50%;
+  animation: flutua 7s ease-in-out infinite;
+  transform-origin: 50% 85%;
+  mix-blend-mode: multiply; /* o PNG tem fundo branco: some sobre o disco creme */
+}
+
+.titulo {
+  font-family: var(--script);
+  font-weight: 400;
+  font-size: clamp(2.3rem, 10vw, 3.5rem);
+  line-height: 1.15;
+  margin: 26px 0 10px;
+  color: var(--ouro-claro);
+  text-shadow: 0 2px 14px rgba(0,0,0,.3);
+}
+.apresentacao {
+  max-width: 28rem;
+  margin: 0;
+  font-size: clamp(1.02rem, 4.2vw, 1.2rem);
+  line-height: 1.65;
+  color: #f1f5ff;
+}
+
+.btn-revelar {
+  margin-top: 28px;
+  padding: 15px 34px;
+  border: 0; border-radius: 999px;
+  font-family: var(--serif);
+  font-size: 1.3rem; font-weight: 600; letter-spacing: .03em;
+  color: var(--navy);
+  background: linear-gradient(180deg, #f8e8ae 0%, #d8b055 100%);
+  box-shadow: 0 6px 22px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.75);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-revelar:active { transform: translateY(1px); }
+.btn-revelar:focus-visible, .btn-sec:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.btn-revelar.surge { animation: surge 1.2s ease 1.8s forwards, pulsa 4s ease-in-out 3.6s infinite; }
+.erro { margin: 18px 0 0; max-width: 24rem; color: #ffd9de; line-height: 1.5; }
+
+/* pétalas caindo */
+.petala {
+  position: absolute; top: -6%; left: var(--x); z-index: 0;
+  width: var(--s); height: var(--s);
+  border-radius: 0 100% 0 100%;
+  background: linear-gradient(135deg, #f59aab, #d4304e);
+  opacity: 0;
+  animation: cai var(--t) linear var(--d) infinite;
+  pointer-events: none;
+}
+
+/* ===== Tela 2 — carta ===== */
+#tela2 {
+  position: relative;
+  padding: 26px 14px calc(44px + env(safe-area-inset-bottom));
+  background: linear-gradient(180deg, #dfeafa 0%, #f3f7fd 38%, #fffdf6 100%);
+  overflow: hidden;
+}
+.marca-dagua {
+  position: absolute; left: 50%; top: 150px; transform: translateX(-50%);
+  width: min(130vw, 640px); opacity: .06; pointer-events: none;
+}
+.marca-dagua svg { width: 100%; height: auto; display: block; }
+
+.carta {
+  position: relative;
+  max-width: 660px; margin: 0 auto;
+  padding: 30px 26px 34px;
+  background: var(--marfim);
+  border: 1px solid rgba(201,162,74,.6);
+  border-radius: 8px;
+  box-shadow: 0 14px 40px rgba(16,40,90,.16);
+}
+.carta::before {
+  content: ""; position: absolute; inset: 7px; border-radius: 4px; pointer-events: none;
+  border: 1px solid rgba(201,162,74,.38);
+}
+
+.carta-topo { display: flex; justify-content: center; margin-bottom: 8px; }
+.aparecida { width: clamp(118px, 34vw, 160px); filter: drop-shadow(0 6px 10px rgba(16,40,90,.22)); }
+.aparecida svg { width: 100%; height: auto; display: block; }
+
+.saudacao {
+  font-family: var(--script);
+  font-size: clamp(2rem, 8vw, 2.6rem);
+  line-height: 1.2; margin: 12px 0 14px; color: var(--azul);
+}
+.texto p {
+  margin: 0 0 1.05em;
+  font-size: clamp(1.02rem, 4.1vw, 1.14rem);
+  line-height: 1.78;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+}
+.texto p:last-child { margin-bottom: 0; }
+
+.versiculo {
+  margin: 28px 6px 6px; padding: 0; text-align: center;
+}
+.versiculo p {
+  margin: 0; font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.2rem, 5vw, 1.4rem); line-height: 1.5; color: var(--azul);
+}
+.versiculo p::before { content: "“"; }
+.versiculo p::after { content: "”"; }
+.versiculo cite {
+  display: block; margin-top: 8px; font-style: normal;
+  font-family: var(--serif); font-weight: 600; letter-spacing: .06em;
+  font-size: 1.02rem; color: #a98230;
+}
+
+.terco { width: min(210px, 62%); margin: 22px auto 14px; }
+.terco svg { width: 100%; height: auto; display: block; }
+
+.oracao {
+  margin-top: 6px; padding: 22px 20px 20px; text-align: center;
+  background: linear-gradient(180deg, rgba(220,232,248,.55), rgba(244,248,254,.55));
+  border: 1px solid rgba(201,162,74,.7);
+  border-radius: 12px;
+  break-inside: avoid;
+}
+.oracao h2 {
+  margin: 0 0 10px; font-family: var(--script); font-weight: 400;
+  font-size: 2rem; color: #a98230;
+}
+.oracao p {
+  margin: 0 0 .8em; font-family: var(--serif); font-weight: 500;
+  font-size: clamp(1.1rem, 4.5vw, 1.22rem); line-height: 1.7; color: var(--navy);
+}
+.oracao p:last-child { margin-bottom: 0; }
+
+.assinatura {
+  margin: 26px 0 0; text-align: center; break-inside: avoid;
+  font-family: var(--script); font-size: clamp(1.9rem, 7.5vw, 2.3rem); color: var(--azul);
+}
+
+.acoes { max-width: 660px; margin: 22px auto 0; text-align: center; }
+.btn-sec {
+  margin: 5px; padding: 12px 22px; border-radius: 999px; cursor: pointer;
+  font-family: var(--serif); font-size: 1.1rem; font-weight: 600; letter-spacing: .02em;
+  color: #fff; background: var(--azul); border: 1.5px solid var(--azul);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-sec.btn-claro { background: transparent; color: var(--azul); }
+.btn-sec:focus-visible { outline-color: var(--azul); }
+.dica { margin: 12px auto 0; max-width: 30rem; font-size: .85rem; line-height: 1.5; color: #5a6a8c; }
+
+/* ===== Animações ===== */
+@keyframes surge { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.surge { opacity: 0; animation: surge 1.2s ease forwards; animation-delay: var(--d, 0s); }
+.rosa-wrap.surge { animation-name: surge; }
+@keyframes flutua {
+  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+  50% { transform: translateY(-7px) rotate(1.5deg); }
+}
+@keyframes pulsa {
+  0%, 100% { box-shadow: 0 6px 22px rgba(0,0,0,.3), 0 0 0 0 rgba(236,212,143,.0), inset 0 1px 0 rgba(255,255,255,.75); }
+  50% { box-shadow: 0 6px 22px rgba(0,0,0,.3), 0 0 0 9px rgba(236,212,143,.18), inset 0 1px 0 rgba(255,255,255,.75); }
+}
+@keyframes brilho { from { opacity: .55; } to { opacity: 1; } }
+@keyframes cai {
+  0%   { opacity: 0; transform: translate(0, 0) rotate(0); }
+  8%   { opacity: .75; }
+  50%  { transform: translate(28px, 55dvh) rotate(160deg); }
+  92%  { opacity: .6; }
+  100% { opacity: 0; transform: translate(-14px, 112dvh) rotate(330deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rosa, .petala, #tela1::before, .btn-revelar.surge { animation: none; }
+  .petala { display: none; }
+  .surge { animation-duration: .01s; animation-delay: 0s; }
+  .tela { transition-duration: .2s; }
+}
+
+@media (min-width: 640px) {
+  #tela2 { padding-top: 44px; }
+  .carta { padding: 44px 56px 48px; }
+}
+
+/* ===== Impressão ===== */
+@page { size: A4; margin: 15mm; }
+@media print {
+  html, body { background: #fff !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  #tela1, .no-print, .marca-dagua { display: none !important; }
+  #tela2 { display: block !important; opacity: 1 !important; padding: 0; min-height: 0; background: none; overflow: visible; }
+  .carta { max-width: none; padding: 0; border: 0; box-shadow: none; background: none; }
+  .carta::before { display: none; }
+  .aparecida { width: 96px; filter: none; }
+  .saudacao { font-size: 26pt; margin: 6px 0 8px; }
+  .texto p { font-size: 12pt; line-height: 1.6; }
+  .versiculo { margin-top: 18px; break-inside: avoid; }
+  .versiculo p { font-size: 14pt; }
+  .terco { width: 150px; margin: 12px auto 8px; }
+  .oracao { background: none; padding: 14px 16px; }
+  .oracao h2 { font-size: 22pt; }
+  .oracao p { font-size: 12pt; line-height: 1.55; }
+  .assinatura { font-size: 22pt; margin-top: 16px; }
+}
