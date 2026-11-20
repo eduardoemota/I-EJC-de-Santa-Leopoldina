@@ -3,11 +3,11 @@
   "messages": [
     {
       "id": "01",
-      "name": "",
-      "greeting": "Querido(a)",
-      "title": "Deus caminha ao seu lado",
+      "name": "Ana Júlia",
+      "greeting": "Querida",
+      "title": "Não temas, pois é ovelha do Cordeiro",
       "body": "Que este terço seja um lembrete de que você nunca está só. Em cada oração, encontre um instante de paz; em cada mistério, uma oportunidade de se aproximar de Jesus. Que a fé ilumine seus passos, mesmo nos dias mais difíceis.",
-      "verse": "“O Senhor é meu pastor, nada me faltará.” — Salmo 23,1"
+      "verse": "\"E agora, eis o que diz o Senhor, aquele que te criou, Jacó, e te formou, Israel: Nada temas, pois eu te resgato, eu te chamo pelo nome, és meu. Se tiveres de atravessar a água, estarei contigo. E os rios não te submergirão se caminhares pelo fogo, não te queimarás, e a chama não te consumirá. Pois eu sou o Senhor, teu Deus, o Santo de Israel, teu salvador. Dou o Egito por teu resgate, a Etiópia e Sabá em compensação. Porque és precioso a meus olhos, porque eu te aprecio e te amo, permuto reinos por ti, entrego nações em troca de ti.\" \n- Isaías 43, 1-4"
     },
     {
       "id": "02",
