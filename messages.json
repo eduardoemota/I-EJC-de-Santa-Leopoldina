@@ -4,10 +4,10 @@
     {
       "id": "01",
       "name": "",
-      "greeting": "",
-      "title": "Querida Ana Júlia,",
-      "body": "Minha amiga, como me alegra poder te ver vivendo essa experiência! Rezo para que o EJC seja para você, como foi para mim, um sopro de renovação e de fé. Lembre-se sempre de que você é amada por Deus e por todos nós, que temos a honra de tê-la em nossas vidas. \n\nTe entrego este terço para que, com ele, você se aproxime cada vez mais da Santíssima Virgem Maria, Mãe de Deus e nossa Mãe, e, por intermédio dela, chegue a Jesus, seu Filho e nosso Redentor. Nossa Senhora Aparecida roga por nós e nos ampara com o seu manto de amor e de proteção. Que você possa amá-la como mãe, assim como ela te ama como filha!",
-      "verse": "\"E agora, eis o que diz o Senhor, aquele que te criou, Jacó, e te formou, Israel: Nada temas, pois eu te resgato, eu te chamo pelo nome, és meu. Se tiveres de atravessar a água, estarei contigo. E os rios não te submergirão se caminhares pelo fogo, não te queimarás, e a chama não te consumirá. Pois eu sou o Senhor, teu Deus, o Santo de Israel, teu salvador. Dou o Egito por teu resgate, a Etiópia e Sabá em compensação. Porque és precioso a meus olhos, porque eu te aprecio e te amo, permuto reinos por ti, entrego nações em troca de ti.\" \n\nIsaías 43, 1-4"
+      "greeting": "Querido(a)",
+      "title": "Deus caminha ao seu lado",
+      "body": "Que este terço seja um lembrete de que você nunca está só. Em cada oração, encontre um instante de paz; em cada mistério, uma oportunidade de se aproximar de Jesus. Que a fé ilumine seus passos, mesmo nos dias mais difíceis.",
+      "verse": "“O Senhor é meu pastor, nada me faltará.” — Salmo 23,1"
     },
     {
       "id": "02",
@@ -120,6 +120,46 @@
       "title": "Você não caminha sozinho",
       "body": "A comunidade, a oração e a presença de Deus nos lembram que a fé é uma caminhada compartilhada. Que este terço seja sinal de companhia, cuidado e amizade, e que você sempre encontre motivos para continuar.",
       "verse": "“Onde dois ou três estiverem reunidos em meu nome, eu estou ali.” — Mateus 18,20"
+    },
+    {
+      "id": "16",
+      "name": "",
+      "greeting": "Querido(a)",
+      "title": "A beleza de servir",
+      "body": "Servir é uma forma concreta de amar. Nos pequenos gestos, na disponibilidade e no cuidado com o outro, podemos revelar um pouco do amor de Jesus. Que você nunca perca a alegria de fazer o bem, mesmo quando ninguém estiver olhando.",
+      "verse": "“Quem quiser ser o primeiro, seja o servo de todos.” — Marcos 9,35"
+    },
+    {
+      "id": "17",
+      "name": "",
+      "greeting": "Querido(a)",
+      "title": "Deixe Deus florescer em você",
+      "body": "Assim como uma rosa precisa de cuidado para florescer, nossa fé também precisa ser cultivada pela oração, pela Palavra e pelo amor. Que Deus encontre espaço em seu coração e faça florescer nele tudo aquilo que aproxima você d’Ele.",
+      "verse": "“Eu sou a videira, vós sois os ramos.” — João 15,5"
+    },
+    {
+      "id": "18",
+      "name": "",
+      "greeting": "Querido(a)",
+      "title": "A alegria de caminhar com Cristo",
+      "body": "A alegria cristã não depende de uma vida sem dificuldades, mas da certeza de que Jesus caminha conosco. Que você encontre n’Ele a força para sorrir, recomeçar e levar esperança às pessoas que cruzarem seu caminho.",
+      "verse": "“Alegrai-vos sempre no Senhor.” — Filipenses 4,4"
+    },
+    {
+      "id": "19",
+      "name": "",
+      "greeting": "Querido(a)",
+      "title": "Seja presença que acolhe",
+      "body": "Às vezes, um abraço, uma escuta atenta ou uma palavra gentil podem fazer a diferença na vida de alguém. Que o amor de Cristo inspire você a ser presença acolhedora e sinal de esperança em sua família, comunidade e amizades.",
+      "verse": "“Amai-vos uns aos outros como eu vos amei.” — João 13,34"
+    },
+    {
+      "id": "20",
+      "name": "",
+      "greeting": "Querido(a)",
+      "title": "Que sua fé dê frutos",
+      "body": "Que a experiência vivida neste encontro não fique guardada apenas na memória. Leve para sua rotina tudo aquilo que aproximou seu coração de Deus. Que sua fé cresça, amadureça e se transforme em atitudes de amor.",
+      "verse": "“É pelos frutos que os conhecereis.” — Mateus 7,20"
     }
   ]
 }
